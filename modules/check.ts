@@ -85,8 +85,8 @@ class CheckRegExp {
 	 * @param v any
 	 * @returns boolean
 	 */
-	public ip(v: any): boolean {
-		let reg: RegExp = /((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))/
+	public IPv4(v: any): boolean {
+		let reg: RegExp = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
 		return reg.test(v)
 	}
 
