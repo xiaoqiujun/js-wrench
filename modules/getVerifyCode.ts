@@ -1,10 +1,11 @@
 /**
  * @description 获取随机验证码
- * @param count {number} 生成随机码的个数 默认是4
+ *
+ * @param {number} [count=4]
+ * @return {*}  {string}
  * @example getVerifyCode(4) => 4sGa
- * @returns string
  */
-export default (count: number = 4): string => {
+const getVerifyCode = (count: number = 4): string => {
 	let strAll: string =
 		'azxcvbnmsdfghjklqwertyuiopZXCVBNMASDFGHJKLQWERTYUIOP0123456789'
 	let newStr: string = ''
@@ -14,3 +15,4 @@ export default (count: number = 4): string => {
 	}
 	return newStr
 }
+export default getVerifyCode

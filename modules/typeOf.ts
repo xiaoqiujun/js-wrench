@@ -1,9 +1,21 @@
+type Types =
+	| 'string'
+	| 'number'
+	| 'object'
+	| 'function'
+	| 'boolean'
+	| 'undefined'
+	| 'symbol'
+	| 'bigint'
 /**
  * @description 判断数据类型
- * @param v any
- * @param t string  string|number|object|function|boolean|undefined|symbol
+ *
+ * @param {*} v
+ * @param {Types} t
+ * @return {*}  {boolean}
+ * @example typeOf(true, "boolean") = true
  */
-type Types = "string" | "number" | "object" | "function" | "boolean" | "undefined" | "symbol" | "bigint";
-export default (v:any, t:Types):boolean => {
-    return (typeof v) === t;
+const typeOf = (v: any, t: Types): boolean => {
+	return typeof v === t
 }
+export default typeOf

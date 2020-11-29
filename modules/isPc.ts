@@ -1,8 +1,10 @@
 /**
  * @description 是否PC端
- * @return boolean
+ *
+ * @return {*}  {boolean}
+ * @example isPC() => true|false
  */
-export default (): boolean => {
+const isPC = (): boolean => {
 	let userAgentInfo: string = navigator.userAgent
 	let Agents: Array<string> = [
 		'Android',
@@ -21,3 +23,4 @@ export default (): boolean => {
 	}
 	return flag
 }
+export default isPC

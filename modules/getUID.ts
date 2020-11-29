@@ -1,9 +1,10 @@
 /**
  * @description 生成唯一的UID
+ *
+ * @return {*}  {string}
  * @example createUID() => 5d33b0fc-692d-41eb-e703-4aa76ab08f
- * @returns string
  */
-export default (): string => {
+const getUID = (): string => {
 	let uniqid: string = ''
 	let rule: string = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxx'
 	uniqid = rule.replace(/[xy]/g, function (rep: string) {
@@ -12,3 +13,4 @@ export default (): string => {
 	})
 	return uniqid
 }
+export default getUID

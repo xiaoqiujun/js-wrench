@@ -1,10 +1,13 @@
-import {toString} from './init';
+import { toString } from './init'
 
 /**
  * @description 是否字符串
- * @param v any
- * @return boolean
+ *
+ * @param {*} v
+ * @return {*}  {boolean}
+ * @example isString("12") => true
  */
-export default (v:any):boolean => {
-    return toString.call(v) === "[object String]";
+const isString = (v: any): boolean => {
+	return toString.call(v) === '[object String]'
 }
+export default isString

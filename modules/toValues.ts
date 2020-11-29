@@ -1,11 +1,12 @@
 import isObj from './isObj'
 /**
  * @description 返回object自身可枚举属性值
- * @param obj {object} 接收一个object数据
- * @returns Array
+ *
+ * @param {*} obj
+ * @return {*}  {Array<any>}
+ * @example toValues({a:1,b:2}) => [1, 2]
  */
-
-export default (obj: any): Array<string> => {
+const toValues = (obj: any): Array<any> => {
 	if (!isObj(obj)) return []
 	let values: Array<any> = []
 	for (let key in obj) {
@@ -13,3 +14,5 @@ export default (obj: any): Array<string> => {
 	}
 	return values
 }
+
+export default toValues

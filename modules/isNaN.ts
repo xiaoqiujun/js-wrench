@@ -1,7 +1,11 @@
 /**
  * @description 是否NaN
- * @returns boolean
+ *
+ * @param {*} v
+ * @return {*}  {boolean}
+ * @example isNaN(NaN) => true
  */
-export default (v: any): boolean => {
+const isNaN = (v: any): boolean => {
 	return isNaN(v) && Number.isNaN(v)
 }
+export default isNaN

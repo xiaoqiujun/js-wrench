@@ -1,10 +1,13 @@
-import {toString} from './init';
+import { toString } from './init'
 
 /**
  * @description 是否Null
- * @param v any
- * @return boolean
+ *
+ * @param {*} v
+ * @return {*}  {boolean}
+ * @example isNull(null) => true
  */
-export default (v:any):boolean => {
-    return toString.call(v) === "[object Null]";
+const isNull = (v: any): boolean => {
+	return toString.call(v) === '[object Null]'
 }
+export default isNull

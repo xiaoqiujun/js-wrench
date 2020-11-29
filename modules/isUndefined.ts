@@ -1,10 +1,13 @@
-import {toString} from './init';
+import { toString } from './init'
 
 /**
  * @description 是否 undefined
- * @param v any
- * @return boolean
+ *
+ * @param {*} v
+ * @return {*}  {boolean}
+ * @example isUndefined(null) => false
  */
-export default (v:any):boolean => {
-    return toString.call(v) === "[object Undefined]";
+const isUndefined = (v: any): boolean => {
+	return toString.call(v) === '[object Undefined]'
 }
+export default isUndefined

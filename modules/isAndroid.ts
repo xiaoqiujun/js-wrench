@@ -1,9 +1,10 @@
 /**
  * @description 是否Android
- * @return boolean 返回一个boolean值
- * @example isAndroid() => false|true
+ *
+ * @return {*}  {boolean}
+ * @example isAndroid() => true|false
  */
-export default (): boolean => {
+const isAndroid = (): boolean => {
 	let userAgentInfo: string = navigator.userAgent
 	if (
 		userAgentInfo.indexOf('Android') > -1 ||
@@ -13,3 +14,5 @@ export default (): boolean => {
 	}
 	return false
 }
+
+export default isAndroid

@@ -1,10 +1,12 @@
 /**
  * @description 对字符串左边去空格
- * @param str string 一个字符串类型
- * @return string 返回一个字符串类型
+ *
+ * @param {string} str
+ * @return {*}  {string}
+ * @example ltrim(" abc ") => "abc "
  */
-
-export default (str: string): string => {
-    let reg: RegExp = /^\s*/;
-    return str.replace(reg, "");
+const ltrim = (str: string): string => {
+	let reg: RegExp = /^\s*/
+	return str.replace(reg, '')
 }
+export default ltrim

@@ -1,10 +1,13 @@
-import {toString} from './init';
+import { toString } from './init'
 
 /**
  * @description 是否Promise
- * @param v any
- * @return boolean
+ *
+ * @param {*} v
+ * @return {*}  {boolean}
+ * @example isPromise() => true|false
  */
-export default (v:any):boolean => {
-    return toString.call(v) === "[object Promise]";
+const isPromise = (v: any): boolean => {
+	return toString.call(v) === '[object Promise]'
 }
+export default isPromise

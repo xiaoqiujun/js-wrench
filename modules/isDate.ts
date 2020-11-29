@@ -1,10 +1,13 @@
-import {toString} from './init';
+import { toString } from './init'
 
 /**
  * @description 是否日期
- * @param v any
- * @return boolean
+ *
+ * @param {*} v
+ * @return {*}  {boolean}
+ * @example isDate("123") => false
  */
-export default (v:any):boolean => {
-    return toString.call(v) === "[object Date]";
+const isDate = (v: any): boolean => {
+	return toString.call(v) === '[object Date]'
 }
+export default isDate

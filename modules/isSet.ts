@@ -1,10 +1,13 @@
-import {toString} from './init';
+import { toString } from './init'
 
 /**
  * @description 是否Set
- * @param v any
- * @return boolean
+ *
+ * @param {*} v
+ * @return {*}  {boolean}
+ * @example isSet() => true|false
  */
-export default (v:any):boolean => {
-    return toString.call(v) === "[object Set]";
+const isSet = (v: any): boolean => {
+	return toString.call(v) === '[object Set]'
 }
+export default isSet

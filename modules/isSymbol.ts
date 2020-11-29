@@ -1,10 +1,13 @@
-import {toString} from './init';
+import { toString } from './init'
 
 /**
  * @description 是否Symbol
- * @param v any
- * @return boolean
+ *
+ * @param {*} v
+ * @return {*}  {boolean}
+ * @example isSymbol() => false|true
  */
-export default (v:any):boolean => {
-    return toString.call(v) === "[object Symbol]";
+const isSymbol = (v: any): boolean => {
+	return toString.call(v) === '[object Symbol]'
 }
+export default isSymbol

@@ -1,9 +1,10 @@
 import isArray from './isArray'
 /**
  * @description 对象深拷贝
- * @param obj any 引用数据类型 Array Object
- * @param cache Array<any> 数组 一个缓存,防止拷贝死循环 默认[]
- * @return any 返回一个任意类型
+ *
+ * @param {*} obj
+ * @param {Array<any>} [cache=[]]
+ * @return {*}  {*}
  * @example deepCopy({age:12}, [])
  */
 const deepCopy = (obj: any, cache: Array<any> = []): any => {
