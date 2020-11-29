@@ -3,9 +3,13 @@
 	"version": "1.1.0",
 	"description": "JS函数库",
 	"main": "index.js",
-	"directories": {
-		"test": "test"
-	},
+	"keywords": [
+		"js",
+		"server",
+		"client",
+		"utils",
+		"browser"
+	],
 	"scripts": {
 		"build": "tsc && webpack",
 		"test": "jest",
@@ -14,7 +18,7 @@
 		"doc": "jsdoc -c jsdoc.conf.json"
 	},
 	"author": "xiaoqiujun",
-	"license": "ISC",
+	"license": "MIT",
 	"devDependencies": {
 		"@babel/cli": "^7.12.7",
 		"@babel/core": "^7.12.7",
@@ -34,28 +38,5 @@
 		"typescript": "^4.1.2",
 		"webpack": "^5.9.0",
 		"webpack-cli": "^4.2.0"
-	},
-	"jsdoc-config": {
-		"plugins": [],
-		"recurseDepth": 10,
-		"source": {
-			"include": [
-				"dist/modules"
-			],
-			"includePattern": ".+\\.js$",
-			"excludePattern": "(^|\\/|\\\\)_"
-		},
-		"sourceType": "module",
-		"tags": {
-			"allowUnknownTags": true,
-			"dictionaries": [
-				"jsdoc",
-				"closure"
-			]
-		},
-		"templates": {
-			"cleverLinks": false,
-			"monospaceLinks": false
-		}
 	}
 }
