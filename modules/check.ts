@@ -22,8 +22,8 @@ class CheckRegExp {
 	 *
 	 * @description 匹配手机号码
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example mobile(12345678) => return false
 	 */
@@ -34,8 +34,8 @@ class CheckRegExp {
 	/**
 	 *@description 匹配座机
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example telephone("1367894517") => false
 	 */
@@ -47,8 +47,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配密码 密码以字母开头，长度在6~18之间，只能包含字母、数字和下划线
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example password("abc!@") => false
 	 */
@@ -60,8 +60,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配QQ号码
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example qq("12345") => false
 	 */
@@ -73,8 +73,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配身份证号码
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example IDcard("2313213213") => false
 	 */
@@ -86,8 +86,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配邮政编码
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example postal("511740") => true
 	 */
@@ -99,8 +99,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配URL
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example url("http://127.0.0.1") => true url("http://www.abc.com") => true
 	 */
@@ -112,8 +112,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配IP
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example IPv4("127.0.0.1") => true
 	 */
@@ -125,8 +125,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配数字
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example number("123") => true number("s1") => false
 	 */
@@ -138,8 +138,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配英文
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example en("cn") => true
 	 */
@@ -151,8 +151,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配中文
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example cn("中文") => true  cn("cn") => false
 	 */
@@ -164,8 +164,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配HTML标签
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example html("<div></div>") => true
 	 */
@@ -177,8 +177,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配邮箱地址
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example email("1324568@qq.com") => true
 	 */
@@ -190,8 +190,8 @@ class CheckRegExp {
 	/**
 	 * @description 匹配账号合法
 	 *
-	 * @param {*} v
-	 * @return {*}  {boolean}
+	 * @param {*} v 要匹配的内容
+	 * @return {*}  {boolean} 返回一个布尔值
 	 * @memberof CheckRegExp
 	 * @example username(abc_132) => true
 	 */

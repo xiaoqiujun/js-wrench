@@ -1,7 +1,7 @@
 /**
  * @description 是否Android
  *
- * @return {*}  {boolean}
+ * @return {*}  {boolean} 返回一个布尔值
  * @example isAndroid() => true|false
  */
 const isAndroid = (): boolean => {

@@ -1,16 +1,15 @@
 /**
  * @description 获取随机验证码
  *
- * @param {number} [count=4]
- * @return {*}  {string}
+ * @param {number} [len=4] 默认长度是4位
+ * @return {*}  {string} 返回一个[len]长度的随机字符串
  * @example getVerifyCode(4) => 4sGa
  */
-var getVerifyCode = function (count) {
-    if (count === void 0) { count = 4; }
-    var strAll = 'azxcvbnmsdfghjklqwertyuiopZXCVBNMASDFGHJKLQWERTYUIOP0123456789';
-    var newStr = '';
-    for (var i = 0; i < count; i++) {
-        var index = Math.floor(Math.random() * strAll.length);
+const getVerifyCode = (len = 4) => {
+    let strAll = 'azxcvbnmsdfghjklqwertyuiopZXCVBNMASDFGHJKLQWERTYUIOP0123456789';
+    let newStr = '';
+    for (let i = 0; i < len; i++) {
+        let index = Math.floor(Math.random() * strAll.length);
         newStr += strAll.charAt(index);
     }
     return newStr;

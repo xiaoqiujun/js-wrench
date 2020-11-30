@@ -16,86 +16,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var CheckRegExp = function () {
-  function CheckRegExp() {}
+class CheckRegExp {
+  constructor() {}
 
-  CheckRegExp.getInstance = function () {
+  static getInstance() {
     if (!this.$instance) this.$instance = new CheckRegExp();
     return this.$instance;
-  };
+  }
 
-  CheckRegExp.prototype.mobile = function (v) {
+  mobile(v) {
     var reg = /^1[3|4|5|6|7|8|9][0-9]{9}$/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.telephone = function (v) {
+  telephone(v) {
     var reg = /^(0\d{2,3}-\d{7,8})(-\d{1,4})?$/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.password = function (v) {
+  password(v) {
     var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.qq = function (v) {
+  qq(v) {
     var reg = /^[1-9][0-9]{4,9}$/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.IDcard = function (v) {
+  IDcard(v) {
     var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.postal = function (v) {
+  postal(v) {
     var reg = /\d{6}/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.url = function (v) {
+  url(v) {
     var reg = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.IPv4 = function (v) {
+  IPv4(v) {
     var reg = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.number = function (v) {
+  number(v) {
     var reg = /^[0-9]$/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.en = function (v) {
+  en(v) {
     var reg = /^[a-zA-Z]+$/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.cn = function (v) {
+  cn(v) {
     var reg = /^[\u4E00-\u9FA5]+$/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.html = function (v) {
+  html(v) {
     var reg = /<("[^"]*"|'[^']*'|[^'">])*>/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.email = function (v) {
+  email(v) {
     var reg = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
     return reg.test(v);
-  };
+  }
 
-  CheckRegExp.prototype.username = function (v) {
+  username(v) {
     var reg = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/;
     return reg.test(v);
-  };
+  }
 
-  return CheckRegExp;
-}();
+}
 
 var check = CheckRegExp.getInstance();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (check);
@@ -116,8 +115,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var getBrowserType = function getBrowserType() {
-  var types = '';
+var getBrowserType = () => {
+  var types = null;
   var userAgentInfo = navigator.userAgent;
   var isOpera = userAgentInfo.indexOf('Opera') > -1;
   var isIE = userAgentInfo.indexOf('compatible') > -1 && userAgentInfo.indexOf('MSIE') > -1 && !isOpera;
@@ -131,7 +130,7 @@ var getBrowserType = function getBrowserType() {
     var regIE = new RegExp('MSIE (\\d+\\.\\d+);');
     regIE.test(userAgentInfo);
     var version = parseFloat(RegExp['$1']);
-    if (version == 7) types = 'IE7';else if (version == 8) types = 'IE8';else if (version == 9) types = 'IE9';else if (version == 10) types = 'IE10';else types = '[版本过低]';
+    if (version == 7) types = 'IE7';else if (version == 8) types = 'IE8';else if (version == 9) types = 'IE9';else if (version == 10) types = 'IE10';else types = null;
   }
 
   if (isIE11) types = 'IE11';
@@ -166,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var has = function has(obj, v) {
+var has = (obj, v) => {
   if (!(0,_isObj__WEBPACK_IMPORTED_MODULE_1__.default)(obj)) return false;
   return _init__WEBPACK_IMPORTED_MODULE_0__.hasOwnProperty.call(obj, v);
 };
@@ -189,25 +188,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isArray */ "./dist/modules/isArray.js");
-/* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
-/* harmony import */ var _isFn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./isFn */ "./dist/modules/isFn.js");
+/* harmony import */ var _isString__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isString */ "./dist/modules/isString.js");
 
 
-
-
-var includes = function includes(arr, ele, fromIndex) {
-  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__.default)(arr)) return false;
-
-  if ((0,_isFn__WEBPACK_IMPORTED_MODULE_2__.default)(_init__WEBPACK_IMPORTED_MODULE_1__.arrayProto.includes)) {
-    return arr.includes(ele, fromIndex);
-  }
-
+var includes = (data, ele, fromIndex) => {
+  (0,_isString__WEBPACK_IMPORTED_MODULE_0__.default)(data) && data.split("");
   var index = fromIndex || 0;
-  var i = Math.max(index >= 0 ? index : arr.length - Math.abs(fromIndex), 0);
+  var i = Math.max(index >= 0 ? index : data.length - Math.abs(fromIndex), 0);
 
-  while (i < arr.length) {
-    if ('' + arr[i] === '' + ele) {
+  while (i < data.length) {
+    if ('' + data[i] === '' + ele) {
       return true;
     }
 
@@ -372,21 +362,28 @@ __webpack_require__.r(__webpack_exports__);
 /*! namespace exports */
 /*! export default [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var indexOf = function indexOf(arr, ele, fromIndex) {
-  var len = arr.length;
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isArray */ "./dist/modules/isArray.js");
+/* harmony import */ var _isString__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isString */ "./dist/modules/isString.js");
+
+
+
+var indexOf = function indexOf(data, ele) {
+  var fromIndex = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__.default)(data) || !(0,_isString__WEBPACK_IMPORTED_MODULE_1__.default)(data)) return -1;
+  var len = data.length;
   if (len === 0) return -1;
   var index = fromIndex || 0;
-  var i = Math.max(index >= 0 ? index : arr.length - Math.abs(fromIndex), 0);
+  var i = Math.max(index >= 0 ? index : data.length - Math.abs(fromIndex), 0);
 
   while (i < len) {
-    if (i in arr && arr[i] === ele) return i;
+    if (data[i] === ele) return i;
     i++;
   }
 
@@ -450,7 +447,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var isAndroid = function isAndroid() {
+var isAndroid = () => {
   var userAgentInfo = navigator.userAgent;
 
   if (userAgentInfo.indexOf('Android') > -1 || userAgentInfo.indexOf('Linux') > -1) {
@@ -481,7 +478,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isArray = function isArray(v) {
+var isArray = v => {
   return v.constructor === Array && _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Array]';
 };
 
@@ -506,7 +503,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isBool = function isBool(v) {
+var isBool = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Boolean]';
 };
 
@@ -531,7 +528,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isDate = function isDate(v) {
+var isDate = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Date]';
 };
 
@@ -556,7 +553,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isFn = function isFn(v) {
+var isFn = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Function]';
 };
 
@@ -578,7 +575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var isIOS = function isIOS() {
+var isIOS = () => {
   var userAgentInfo = navigator.userAgent;
 
   if (userAgentInfo.indexOf('iPhone') > -1) {
@@ -609,7 +606,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isMap = function isMap(v) {
+var isMap = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Map]';
 };
 
@@ -631,7 +628,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var isNaN = function isNaN(v) {
+var isNaN = v => {
   return isNaN(v) && Number.isNaN(v);
 };
 
@@ -656,7 +653,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isNull = function isNull(v) {
+var isNull = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Null]';
 };
 
@@ -681,7 +678,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isNumber = function isNumber(v) {
+var isNumber = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Number]';
 };
 
@@ -706,7 +703,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isObj = function isObj(v) {
+var isObj = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Object]';
 };
 
@@ -728,7 +725,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var isPC = function isPC() {
+var isPC = () => {
   var userAgentInfo = navigator.userAgent;
   var Agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
   var flag = true;
@@ -761,11 +758,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
+/* harmony import */ var _isFn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isFn */ "./dist/modules/isFn.js");
 
 
-var isPromise = function isPromise(v) {
-  return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Promise]';
+var isPromise = v => {
+  return v && (0,_isFn__WEBPACK_IMPORTED_MODULE_0__.default)(v.then);
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isPromise);
@@ -789,7 +786,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isSet = function isSet(v) {
+var isSet = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Set]';
 };
 
@@ -814,7 +811,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isString = function isString(v) {
+var isString = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object String]';
 };
 
@@ -839,7 +836,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isSymbol = function isSymbol(v) {
+var isSymbol = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Symbol]';
 };
 
@@ -864,7 +861,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
 
 
-var isUndefined = function isUndefined(v) {
+var isUndefined = v => {
   return _init__WEBPACK_IMPORTED_MODULE_0__.toString.call(v) === '[object Undefined]';
 };
 
@@ -886,7 +883,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var isWPhone = function isWPhone() {
+var isWPhone = () => {
   var userAgentInfo = navigator.userAgent;
 
   if (userAgentInfo.indexOf('Windows Phone') > -1) {
@@ -914,7 +911,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var isiPad = function isiPad() {
+var isiPad = () => {
   var userAgentInfo = navigator.userAgent;
 
   if (userAgentInfo.indexOf('iPad') > -1) {
@@ -942,7 +939,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var ltrim = function ltrim(str) {
+var ltrim = str => {
   var reg = /^\s*/;
   return str.replace(reg, '');
 };
@@ -965,15 +962,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var random = function random(lower, upper) {
-  if (lower === void 0) {
-    lower = 0;
-  }
-
-  if (upper === void 0) {
-    upper = 1;
-  }
-
+var random = function random() {
+  var lower = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var upper = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
   return Math.floor(Math.random() * (upper - lower)) + lower;
 };
 
@@ -995,7 +986,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var rtrim = function rtrim(str) {
+var rtrim = str => {
   var reg = /\s*$/;
   return str.replace(reg, '');
 };
@@ -1021,7 +1012,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _isObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObj */ "./dist/modules/isObj.js");
 
 
-var toKeys = function toKeys(obj) {
+var toKeys = obj => {
   if (!(0,_isObj__WEBPACK_IMPORTED_MODULE_0__.default)(obj)) return [];
   var keys = [];
 
@@ -1050,7 +1041,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var toLowerCase = function toLowerCase(str) {
+var toLowerCase = str => {
   var _arr = str.split('');
 
   var _ascii;
@@ -1093,12 +1084,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var toParam = function toParam(obj) {
+var toParam = obj => {
   if (!(0,_isObj__WEBPACK_IMPORTED_MODULE_1__.default)(obj)) return '';
   var keys = (0,_toKeys__WEBPACK_IMPORTED_MODULE_0__.default)(obj);
   var param = '';
-  keys.forEach(function (key, i) {
-    if (i < keys.length - 1) param += key + "=" + obj[key] + "&";else param += key + "=" + obj[key];
+  keys.forEach((key, i) => {
+    if (i < keys.length - 1) param += "".concat(key, "=").concat(obj[key], "&");else param += "".concat(key, "=").concat(obj[key]);
   });
   return param;
 };
@@ -1121,7 +1112,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var toUpperCase = function toUpperCase(str) {
+var toUpperCase = str => {
   var _arr = str.split('');
 
   var _ascii;
@@ -1159,7 +1150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var trim = function trim(str) {
+var trim = str => {
   var reg = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
   return str.replace(reg, '');
 };
@@ -1182,7 +1173,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-var typeOf = function typeOf(v, t) {
+var typeOf = (v, t) => {
   return typeof v === t;
 };
 

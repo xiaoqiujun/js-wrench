@@ -2,11 +2,11 @@ import { toString } from './init';
 /**
  * @description 是否Set
  *
- * @param {*} v
- * @return {*}  {boolean}
+ * @param {*} v 任意值
+ * @return {*}  {boolean} 返回一个布尔值
  * @example isSet() => true|false
  */
-var isSet = function (v) {
+const isSet = (v) => {
     return toString.call(v) === '[object Set]';
 };
 export default isSet;

@@ -1,8 +1,8 @@
-export var arrayProto = Array.prototype;
-export var objProto = Object.prototype;
-export var push = arrayProto.push;
-export var pop = arrayProto.pop;
-export var slice = arrayProto.slice;
-export var splice = arrayProto.splice;
-export var toString = objProto.toString;
-export var hasOwnProperty = objProto.hasOwnProperty;
+export const arrayProto = Array.prototype;
+export const objProto = Object.prototype;
+export const push = arrayProto.push;
+export const pop = arrayProto.pop;
+export const slice = arrayProto.slice;
+export const splice = arrayProto.splice;
+export const toString = objProto.toString;
+export const hasOwnProperty = objProto.hasOwnProperty;

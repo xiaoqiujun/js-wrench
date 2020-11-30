@@ -1,27 +1,47 @@
+import isArray from './isArray'
+import isString from './isString'
+import isObj from './isObj';
+import toKeys from './toKeys';
+import has from './has';
 /**
  * @description indexOf 从头到尾地检索 如果有返回索引值
  *
- * @param {[]} arr
- * @param {never} ele
- * @param {(number | undefined)} fromIndex
- * @return {*}  {number}
- * @example indexOf([1,2,3], 1) => 0
+ * @param {(any[] | string)} data 需要查找的数组或者字符串
+ * @param {any} ele 指定的值, 可以是数字,字符串,对象
+ * @param {(number | undefined)} [fromIndex] 从指定位置开始查找 默认undefined
+ * @return {*}  {number} 返回第一次出现的索引, 如果没有找到, 则返回-1
+ * @example indexOf([1,2,3], 1) => 0 indexOf([{c:1}, {a:1,b:2}], {a:1}) => -1 indexOf([[1], [2,3]], [2,3]) => 1
  */
 const indexOf = (
-	arr: [],
-	ele: never,
-	fromIndex: number | undefined
+	data: any[] | string,
+	ele: any,
+	fromIndex: number = 0
 ): number => {
-	let len: number = arr.length
+	if(!isArray(data) && !isString(data)) return -1;
+	let len: number = data.length
 	if (len === 0) return -1
 	let index: number = fromIndex || 0
 	let i: number = Math.max(
-		index >= 0 ? index : arr.length - Math.abs(fromIndex as number),
+		index >= 0 ? index : data.length - Math.abs(fromIndex as number),
 		0
 	)
-
 	while (i < len) {
-		if (i in arr && arr[i] === ele) return i
+		if(isObj(ele)) {
+			let key:string[] = toKeys(ele)
+			let len = key.length
+			while(len > 0) {
+				if(has(data[i], key[len - 1]) && data[i][key[len - 1]])
+			}
+			if(toKeys(data[i]).length === toKeys(ele).length) {
+				toKeys(ele).forEach(key => {
+					if(has(data[i], key) && data[i][key] === ele[key]) return i
+				})
+			}
+		}else if(isArray(ele)) {
+			if(data[i].join("") === ele.join("")) return i	//用转换成字符串比较
+		}else {
+			if (data[i] === ele) return i
+		}
 		i++
 	}
 	return -1

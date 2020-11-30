@@ -3,8 +3,8 @@ import toUpperCase from './toUpperCase'
 /**
  * @description 首字母大写
  *
- * @param {string} str
- * @return {*}  {string}
+ * @param {string} str 传入一个字符串
+ * @return {*}  {string} 返回一个新的首字母大写的字符串
  * @example toFirstUpper("abc") => Abc toFirstUpper("ABC") => ABC
  */
 const toFirstUpper = (str: string): string => {

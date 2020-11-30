@@ -1,11 +1,11 @@
 /**
  * @description 是否iPad
  *
- * @return {*}  {boolean}
+ * @return {*}  {boolean} 返回一个布尔值
  * @example isiPad() => true|false
  */
-var isiPad = function () {
-    var userAgentInfo = navigator.userAgent;
+const isiPad = () => {
+    let userAgentInfo = navigator.userAgent;
     if (userAgentInfo.indexOf('iPad') > -1) {
         return true;
     }

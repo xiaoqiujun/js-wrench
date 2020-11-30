@@ -1,11 +1,11 @@
 /**
  * @description 是否IOS
  *
- * @return {*}  {boolean}
+ * @return {*}  {boolean} 返回一个布尔值
  * @example isIOS() => false|true
  */
-var isIOS = function () {
-    var userAgentInfo = navigator.userAgent;
+const isIOS = () => {
+    let userAgentInfo = navigator.userAgent;
     if (userAgentInfo.indexOf('iPhone') > -1) {
         return true;
     }

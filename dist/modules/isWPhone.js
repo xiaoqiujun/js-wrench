@@ -1,11 +1,11 @@
 /**
- *@description 是否WPhone
+ *@description 是否WPhone设备
  *
- * @return {*}  {boolean}
+ * @return {*}  {boolean} 返回一个布尔值
  * @example isWPhone() => false|true
  */
-var isWPhone = function () {
-    var userAgentInfo = navigator.userAgent;
+const isWPhone = () => {
+    let userAgentInfo = navigator.userAgent;
     if (userAgentInfo.indexOf('Windows Phone') > -1) {
         return true;
     }

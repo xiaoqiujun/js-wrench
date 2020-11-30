@@ -1,11 +1,11 @@
 /**
  * @description 是否NaN
  *
- * @param {*} v
- * @return {*}  {boolean}
+ * @param {*} v 任意值
+ * @return {*}  {boolean} 返回一个布尔值
  * @example isNaN(NaN) => true
  */
-var isNaN = function (v) {
+const isNaN = (v) => {
     return isNaN(v) && Number.isNaN(v);
 };
 export default isNaN;

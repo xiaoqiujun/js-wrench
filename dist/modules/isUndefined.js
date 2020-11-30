@@ -2,11 +2,11 @@ import { toString } from './init';
 /**
  * @description 是否 undefined
  *
- * @param {*} v
- * @return {*}  {boolean}
+ * @param {*} v 任意值
+ * @return {*}  {boolean} 返回一个布尔值
  * @example isUndefined(null) => false
  */
-var isUndefined = function (v) {
+const isUndefined = (v) => {
     return toString.call(v) === '[object Undefined]';
 };
 export default isUndefined;

@@ -9,14 +9,15 @@ type browserType =
 	| 'Opera'
 	| 'Chrome'
 	| 'Safari'
-	| '[版本过低]'
-	| ''
+	| null		//不对低版本做校验
 /**
  * @description 获取浏览器类型
- * @return {*}  {string}
+ *
+ * @return {*}  {browserType} | 'IE7'| 'IE8'| 'IE9'| 'IE10'| 'IE11'| 'Edge'| 'FireFox'| 'Opera'| 'Chrome'| 'Safari'| null
+ * @example getBrowserType() => 'Chrome'
  */
 const getBrowserType = (): browserType => {
-	let types: browserType = ''
+	let types: browserType = null
 	let userAgentInfo: string = navigator.userAgent
 	let isOpera: boolean = userAgentInfo.indexOf('Opera') > -1
 	let isIE: boolean =
@@ -43,7 +44,7 @@ const getBrowserType = (): browserType => {
 		else if (version == 8) types = 'IE8'
 		else if (version == 9) types = 'IE9'
 		else if (version == 10) types = 'IE10'
-		else types = '[版本过低]'
+		else types = null
 	}
 	if (isIE11) types = 'IE11'
 	if (isEdge) types = 'Edge'

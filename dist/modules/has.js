@@ -3,12 +3,12 @@ import isObj from './isObj';
 /**
  * @description 判断属性是否存在
  *
- * @param {*} obj
- * @param {string} v
- * @return {*}  {boolean}
+ * @param {*} obj 任意类型, 不是obejct返回false
+ * @param {string} v 需要查找的属性名
+ * @return {*}  {boolean} 返回一个布尔值
  * @example has({a:1}, "a") => true
  */
-var has = function (obj, v) {
+const has = (obj, v) => {
     if (!isObj(obj))
         return false;
     return hasOwnProperty.call(obj, v);
