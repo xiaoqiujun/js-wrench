@@ -3,6 +3,7 @@ import isString from './isString'
 import isObj from './isObj';
 import toKeys from './toKeys';
 import has from './has';
+import isPrimitive from './isPrimitive';
 /**
  * @description indexOf 从头到尾地检索 如果有返回索引值
  *
@@ -26,16 +27,26 @@ const indexOf = (
 		0
 	)
 	while (i < len) {
-		if(isObj(ele)) {
-			let key:string[] = toKeys(ele)
-			let len = key.length
-			while(len > 0) {
-				if(has(data[i], key[len - 1]) && data[i][key[len - 1]])
+		if(!isPrimitive(ele)) {
+			const keys:any[] = isObj(ele) ? toKeys(ele) : ele
+			let keyLen:number = keys.length;
+			let current:number = 0;
+			while(current < keyLen) {
+				let key:any = keys[current]
+				if(has(data[i], key) && data[i][key] === ele[key]) {
+					current--
+				}
 			}
+		}else {
+			if (data[i] === ele) return i
+		}
+		if(isObj(ele)) {
 			if(toKeys(data[i]).length === toKeys(ele).length) {
-				toKeys(ele).forEach(key => {
-					if(has(data[i], key) && data[i][key] === ele[key]) return i
-				})
+				let keys:string[] = toKeys(ele);
+				for(let key in keys) {
+					if(!has(data[i], key) || data[i][key] !== ele[key]) return -1
+				}
+				return i
 			}
 		}else if(isArray(ele)) {
 			if(data[i].join("") === ele.join("")) return i	//用转换成字符串比较
