@@ -23,4 +23,13 @@ describe("indexOf搜索", () => {
     it("example_6:indexOf([{a:1}, {a:1,b:2}, {c:1}], {c:1})", () => {
         expect(indexOf([{a:1}, {a:1,b:2}, {c:1}], {c:1})).toBe(2);
     });
+    it("example_7:indexOf([{a:1}, {a:1,b:2}, {c:1}], 1)", () => {
+        expect(indexOf([{a:1}, {a:1,b:2}, {c:1}], 1)).toBe(-1);
+    });
+    it("example_8:indexOf([{a:1}, {a:1,b:2}, {c:1}], {c:1,b:2})", () => {
+        expect(indexOf([{a:1}, {a:1,b:2}, {c:1}], {c:1,b:2}, 3)).toBe(-1);
+    });
+    it("example_9:indexOf([{a:1}, {a:1,b:2}, {c:1}], [1])", () => {
+        expect(indexOf([{a:1}, {a:1,b:2}, {c:1}], [1])).toBe(-1);
+    });
 });

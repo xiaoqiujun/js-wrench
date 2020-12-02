@@ -29,27 +29,13 @@ const indexOf = (
 	while (i < len) {
 		if(!isPrimitive(ele)) {
 			const keys:any[] = isObj(ele) ? toKeys(ele) : ele
-			let keyLen:number = keys.length;
-			let current:number = 0;
-			while(current < keyLen) {
-				let key:any = keys[current]
+			let sum:number = 0;
+			for(let key in ele) {
 				if(has(data[i], key) && data[i][key] === ele[key]) {
-					current--
+					sum++		//用计数的方式判断
 				}
 			}
-		}else {
-			if (data[i] === ele) return i
-		}
-		if(isObj(ele)) {
-			if(toKeys(data[i]).length === toKeys(ele).length) {
-				let keys:string[] = toKeys(ele);
-				for(let key in keys) {
-					if(!has(data[i], key) || data[i][key] !== ele[key]) return -1
-				}
-				return i
-			}
-		}else if(isArray(ele)) {
-			if(data[i].join("") === ele.join("")) return i	//用转换成字符串比较
+			if(sum === keys.length) return i;
 		}else {
 			if (data[i] === ele) return i
 		}
