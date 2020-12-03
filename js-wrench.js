@@ -101,6 +101,99 @@ var check = CheckRegExp.getInstance();
 
 /***/ }),
 
+/***/ "./dist/modules/empty.js":
+/*!*******************************!*\
+  !*** ./dist/modules/empty.js ***!
+  \*******************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _isObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObj */ "./dist/modules/isObj.js");
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isArray */ "./dist/modules/isArray.js");
+/* harmony import */ var _toKeys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./toKeys */ "./dist/modules/toKeys.js");
+/* harmony import */ var _isNull__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isNull */ "./dist/modules/isNull.js");
+/* harmony import */ var _isUndefined__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isUndefined */ "./dist/modules/isUndefined.js");
+/* harmony import */ var _isString__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./isString */ "./dist/modules/isString.js");
+
+
+
+
+
+
+
+var empty = v => {
+  if ((0,_isObj__WEBPACK_IMPORTED_MODULE_0__.default)(v) || (0,_isArray__WEBPACK_IMPORTED_MODULE_1__.default)(v)) return (0,_toKeys__WEBPACK_IMPORTED_MODULE_2__.default)(v).length === 0;
+  if ((0,_isNull__WEBPACK_IMPORTED_MODULE_3__.default)(v) || (0,_isUndefined__WEBPACK_IMPORTED_MODULE_4__.default)(v)) return true;
+  if ((0,_isString__WEBPACK_IMPORTED_MODULE_5__.default)(v)) return v === "";
+  return false;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (empty);
+
+/***/ }),
+
+/***/ "./dist/modules/format.js":
+/*!********************************!*\
+  !*** ./dist/modules/format.js ***!
+  \********************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+class Format {
+  constructor() {}
+
+  static getInstance() {
+    if (!this.$instance) this.$instance = new Format();
+    return this.$instance;
+  }
+
+  date(date) {
+    var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "-";
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    month = month < 10 ? '0' + month : month;
+    day = day < 10 ? '0' + day : day;
+    hour = hour < 10 ? '0' + hour : hour;
+    minute = minute < 10 ? '0' + minute : minute;
+    second = second < 10 ? '0' + second : second;
+    return year + format + month + format + day + ' ' + hour + ':' + minute + ':' + second;
+  }
+
+  money(str, radix) {
+    var reg = /\d{1,3}(?=(\d{3})+$)/g;
+    var split = String(str).split(".");
+    var newStr = split[0].replace(reg, "$&,");
+    var digits = split[1] || "";
+    digits = digits.slice(0, radix ? radix : digits.length);
+    digits = digits ? "." + digits : "";
+    return "".concat(newStr).concat(digits);
+  }
+
+}
+
+var format = Format.getInstance();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (format);
+
+/***/ }),
+
 /***/ "./dist/modules/getBrowserType.js":
 /*!****************************************!*\
   !*** ./dist/modules/getBrowserType.js ***!
@@ -161,12 +254,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./init */ "./dist/modules/init.js");
-/* harmony import */ var _isObj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isObj */ "./dist/modules/isObj.js");
+/* harmony import */ var _isPrimitive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isPrimitive */ "./dist/modules/isPrimitive.js");
 
 
 
 var has = (obj, v) => {
-  if (!(0,_isObj__WEBPACK_IMPORTED_MODULE_1__.default)(obj)) return false;
+  if ((0,_isPrimitive__WEBPACK_IMPORTED_MODULE_1__.default)(obj)) return false;
   return _init__WEBPACK_IMPORTED_MODULE_0__.hasOwnProperty.call(obj, v);
 };
 
@@ -188,17 +281,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _isString__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isString */ "./dist/modules/isString.js");
+/* harmony import */ var _isObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObj */ "./dist/modules/isObj.js");
+/* harmony import */ var _indexOf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./indexOf */ "./dist/modules/indexOf.js");
+
 
 
 var includes = (data, ele, fromIndex) => {
-  (0,_isString__WEBPACK_IMPORTED_MODULE_0__.default)(data) && data.split("");
   var index = fromIndex || 0;
   var i = Math.max(index >= 0 ? index : data.length - Math.abs(fromIndex), 0);
 
   while (i < data.length) {
-    if ('' + data[i] === '' + ele) {
-      return true;
+    if ((0,_isObj__WEBPACK_IMPORTED_MODULE_0__.default)(ele)) {
+      return (0,_indexOf__WEBPACK_IMPORTED_MODULE_1__.default)(data, ele, fromIndex) !== -1;
+    } else {
+      if ('' + data[i] === '' + ele) {
+        return true;
+      }
     }
 
     i++;
@@ -217,6 +315,8 @@ var includes = (data, ele, fromIndex) => {
   \*******************************/
 /*! namespace exports */
 /*! export check [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/check.js .default */
+/*! export empty [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/empty.js .default */
+/*! export format [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/format.js .default */
 /*! export getBrowserType [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/getBrowserType.js .default */
 /*! export has [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/has.js .default */
 /*! export includes [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/includes.js .default */
@@ -248,6 +348,7 @@ var includes = (data, ele, fromIndex) => {
 /*! export toUpperCase [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/toUpperCase.js .default */
 /*! export trim [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/trim.js .default */
 /*! export typeOf [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/typeOf.js .default */
+/*! export unique [provided] [no usage info] [missing usage info prevents renaming] -> ./dist/modules/unique.js .default */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -285,7 +386,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "typeOf": () => /* reexport safe */ _typeOf__WEBPACK_IMPORTED_MODULE_28__.default,
 /* harmony export */   "isPC": () => /* reexport safe */ _isPC__WEBPACK_IMPORTED_MODULE_29__.default,
 /* harmony export */   "isNaN": () => /* reexport safe */ _isNaN__WEBPACK_IMPORTED_MODULE_30__.default,
-/* harmony export */   "toParam": () => /* reexport safe */ _toParam__WEBPACK_IMPORTED_MODULE_31__.default
+/* harmony export */   "toParam": () => /* reexport safe */ _toParam__WEBPACK_IMPORTED_MODULE_31__.default,
+/* harmony export */   "empty": () => /* reexport safe */ _empty__WEBPACK_IMPORTED_MODULE_32__.default,
+/* harmony export */   "format": () => /* reexport safe */ _format__WEBPACK_IMPORTED_MODULE_33__.default,
+/* harmony export */   "unique": () => /* reexport safe */ _unique__WEBPACK_IMPORTED_MODULE_34__.default
 /* harmony export */ });
 /* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isArray */ "./dist/modules/isArray.js");
 /* harmony import */ var _isObj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isObj */ "./dist/modules/isObj.js");
@@ -319,6 +423,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _isPC__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./isPC */ "./dist/modules/isPC.js");
 /* harmony import */ var _isNaN__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./isNaN */ "./dist/modules/isNaN.js");
 /* harmony import */ var _toParam__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./toParam */ "./dist/modules/toParam.js");
+/* harmony import */ var _empty__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./empty */ "./dist/modules/empty.js");
+/* harmony import */ var _format__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./format */ "./dist/modules/format.js");
+/* harmony import */ var _unique__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./unique */ "./dist/modules/unique.js");
+
+
+
 
 
 
@@ -371,19 +481,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isArray */ "./dist/modules/isArray.js");
 /* harmony import */ var _isString__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isString */ "./dist/modules/isString.js");
+/* harmony import */ var _isObj__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./isObj */ "./dist/modules/isObj.js");
+/* harmony import */ var _toKeys__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./toKeys */ "./dist/modules/toKeys.js");
+/* harmony import */ var _has__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./has */ "./dist/modules/has.js");
+/* harmony import */ var _isPrimitive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./isPrimitive */ "./dist/modules/isPrimitive.js");
 
 
 
-var indexOf = function indexOf(data, ele) {
-  var fromIndex = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__.default)(data) || !(0,_isString__WEBPACK_IMPORTED_MODULE_1__.default)(data)) return -1;
+
+
+
+
+var indexOf = (data, ele, fromIndex) => {
+  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__.default)(data) && !(0,_isString__WEBPACK_IMPORTED_MODULE_1__.default)(data)) return -1;
   var len = data.length;
   if (len === 0) return -1;
   var index = fromIndex || 0;
   var i = Math.max(index >= 0 ? index : data.length - Math.abs(fromIndex), 0);
 
   while (i < len) {
-    if (data[i] === ele) return i;
+    if (!(0,_isPrimitive__WEBPACK_IMPORTED_MODULE_5__.default)(ele)) {
+      var keys = (0,_isObj__WEBPACK_IMPORTED_MODULE_2__.default)(ele) ? (0,_toKeys__WEBPACK_IMPORTED_MODULE_3__.default)(ele) : ele;
+      var sum = 0;
+
+      for (var key in ele) {
+        if ((0,_has__WEBPACK_IMPORTED_MODULE_4__.default)(data[i], key) && data[i][key] === ele[key]) {
+          sum++;
+        }
+      }
+
+      if (sum === keys.length) return i;
+    } else {
+      if (data[i] === ele) return i;
+    }
+
     i++;
   }
 
@@ -741,6 +872,31 @@ var isPC = () => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isPC);
+
+/***/ }),
+
+/***/ "./dist/modules/isPrimitive.js":
+/*!*************************************!*\
+  !*** ./dist/modules/isPrimitive.js ***!
+  \*************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _typeOf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeOf */ "./dist/modules/typeOf.js");
+
+
+var isPrimitive = v => {
+  return (0,_typeOf__WEBPACK_IMPORTED_MODULE_0__.default)(v, "string") || (0,_typeOf__WEBPACK_IMPORTED_MODULE_0__.default)(v, "number") || (0,_typeOf__WEBPACK_IMPORTED_MODULE_0__.default)(v, "symbol") || (0,_typeOf__WEBPACK_IMPORTED_MODULE_0__.default)(v, "boolean");
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isPrimitive);
 
 /***/ }),
 
@@ -1178,6 +1334,99 @@ var typeOf = (v, t) => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (typeOf);
+
+/***/ }),
+
+/***/ "./dist/modules/unique.js":
+/*!********************************!*\
+  !*** ./dist/modules/unique.js ***!
+  \********************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _typeOf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeOf */ "./dist/modules/typeOf.js");
+/* harmony import */ var _includes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./includes */ "./dist/modules/includes.js");
+/* harmony import */ var _trim__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./trim */ "./dist/modules/trim.js");
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isArray */ "./dist/modules/isArray.js");
+/* harmony import */ var _isString__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isString */ "./dist/modules/isString.js");
+/* harmony import */ var _isNumber__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./isNumber */ "./dist/modules/isNumber.js");
+
+
+
+
+
+
+
+var uniqueToArray = arr => {
+  arr = arr.filter(Boolean);
+  var newArr = [];
+  var obj = {};
+
+  for (var i = 0; i < arr.length; i++) {
+    if (!obj[arr[i]]) {
+      obj[arr[i]] = true;
+      newArr.push(arr[i]);
+    }
+  }
+
+  return newArr;
+};
+
+var uniqueToSizzArray = arr => {
+  arr = arr.filter(Boolean);
+  var newArr = [];
+  var newObjArr = [];
+  var obj = {};
+
+  for (var i = 0; i < arr.length; i++) {
+    var item = arr[i];
+
+    if ((0,_typeOf__WEBPACK_IMPORTED_MODULE_0__.default)(item, "object")) {
+      if (!(0,_includes__WEBPACK_IMPORTED_MODULE_1__.default)(newObjArr, item)) newObjArr.push(item);
+    } else {
+      if (!obj[item]) {
+        obj[item] = true;
+        newArr.push(item);
+      }
+    }
+  }
+
+  return newArr.concat(newObjArr);
+};
+
+var uniqueToSttring = str => {
+  str = (0,_trim__WEBPACK_IMPORTED_MODULE_2__.default)(str);
+  var newStr = "";
+  var obj = {};
+
+  for (var i = 0; i < str.length; i++) {
+    if (!obj[str[i]]) {
+      newStr += str[i];
+      obj[str[i]] = true;
+    }
+  }
+
+  return newStr;
+};
+
+var uniqueToNumber = num => {
+  var str = "" + num;
+  return Number(uniqueToSttring(str));
+};
+
+var unique = data => {
+  if ((0,_isArray__WEBPACK_IMPORTED_MODULE_3__.default)(data)) return uniqueToSizzArray(data);else if ((0,_isString__WEBPACK_IMPORTED_MODULE_4__.default)(data)) return uniqueToSttring(data);else if ((0,_isNumber__WEBPACK_IMPORTED_MODULE_5__.default)(data)) return uniqueToNumber(data);
+  return null;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (unique);
 
 /***/ })
 

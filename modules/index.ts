@@ -30,6 +30,9 @@ import typeOf from './typeOf'
 import isPC from './isPC'
 import isNaN from './isNaN'
 import toParam from './toParam'
+import empty from './empty';
+import format from './format';
+import unique from './unique';
 
 export {
 	isArray,
@@ -64,4 +67,7 @@ export {
 	isPC,
 	isNaN,
 	toParam,
+	empty,
+	format,
+	unique
 }

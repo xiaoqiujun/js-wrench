@@ -11,3 +11,4 @@ const isPrimitive = (v) => {
         typeOf(v, "symbol") ||
         typeOf(v, "boolean"));
 };
+export default isPrimitive;
