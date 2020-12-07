@@ -201,5 +201,5 @@ class CheckRegExp {
 	}
 }
 
-const check = CheckRegExp.getInstance()
+const check:CheckRegExp = CheckRegExp.getInstance()
 export default check

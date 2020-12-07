@@ -65,5 +65,5 @@ class Format {
 }
 
 
-const format = Format.getInstance()
+const format:Format = Format.getInstance()
 export default format

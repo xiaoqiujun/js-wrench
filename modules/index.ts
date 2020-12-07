@@ -33,7 +33,6 @@ import toParam from './toParam'
 import empty from './empty';
 import format from './format';
 import unique from './unique';
-
 export {
 	isArray,
 	isObj,
