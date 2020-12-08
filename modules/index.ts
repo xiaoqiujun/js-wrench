@@ -33,6 +33,9 @@ import toParam from './toParam'
 import empty from './empty';
 import format from './format';
 import unique from './unique';
+import remove from './remove';
+import noop from './noop';
+import each from './each';
 export {
 	isArray,
 	isObj,
@@ -68,5 +71,8 @@ export {
 	toParam,
 	empty,
 	format,
-	unique
+	unique,
+	remove,
+	noop,
+	each
 }

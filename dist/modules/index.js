@@ -33,4 +33,7 @@ import toParam from './toParam';
 import empty from './empty';
 import format from './format';
 import unique from './unique';
-export { isArray, isObj, check, getBrowserType, has, includes, indexOf, isAndroid, isBool, isDate, isFn, isIOS, isiPad, isMap, isNull, isNumber, isPromise, isSet, isString, isSymbol, isUndefined, isWPhone, ltrim, rtrim, trim, random, toLowerCase, toUpperCase, typeOf, isPC, isNaN, toParam, empty, format, unique };
+import remove from './remove';
+import noop from './noop';
+import each from './each';
+export { isArray, isObj, check, getBrowserType, has, includes, indexOf, isAndroid, isBool, isDate, isFn, isIOS, isiPad, isMap, isNull, isNumber, isPromise, isSet, isString, isSymbol, isUndefined, isWPhone, ltrim, rtrim, trim, random, toLowerCase, toUpperCase, typeOf, isPC, isNaN, toParam, empty, format, unique, remove, noop, each };
