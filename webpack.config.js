@@ -1,10 +1,15 @@
 const path = require('path')
+const TerserPlugin = require("terser-webpack-plugin");
+
 module.exports = {
-	mode: 'development', //production  development
+	mode: 'production', //production  development
 	entry: ['./dist/modules/index.js'],
 	output: {
-		filename: 'js-wrench.js',
-		path: path.resolve(__dirname, './'),
+		filename: 'js-wrench.min.js',
+		libraryTarget: "umd",
+		globalObject: "this",
+		library:"jsWrench",
+		path: path.resolve(__dirname, './')
 	},
 	module: {
 		rules: [
@@ -18,6 +23,8 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.ts'],
 	},
-	plugins: [],
+	plugins: [
+		new TerserPlugin()
+	],
 	devtool: 'source-map',
 }
