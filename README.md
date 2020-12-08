@@ -1,3 +1,13 @@
 # js-wrench
 ### 使用TS封装JS常用函数库
 #### 不定期更新
+
+### Installation
+
+##### In a browser
+`<script src="js-wrench.min.js"></script>`
+
+##### npm
+`npm install js-wrench --save`
+
+

@@ -15,7 +15,7 @@
 		"test": "jest",
 		"test:watch": "jest  --watchAll",
 		"test-c": "jest --coverage",
-		"doc": "jsdoc -c jsdoc.conf.json"
+		"docs": "jsdoc -c jsdoc.conf.json"
 	},
 	"author": "xiaoqiujun",
 	"license": "MIT",
