@@ -2,6 +2,8 @@
 ### 使用TS封装JS常用函数库
 #### 不定期更新
 
+[Docs](https://xiaoqiujun.github.io/js-wrench/)
+
 ### Installation
 
 ##### In a browser

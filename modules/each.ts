@@ -1,5 +1,5 @@
 import isArray from './isArray';
-import isString from './isString';
+import isPrimitive from './isPrimitive';
 import isObj from './isObj';
 import toKeys from './toKeys';
 import isFn from './isFn';
@@ -10,14 +10,16 @@ import noop from './noop';
  *
  * @param {*} collection
  * @param {Function} iteratee
+ * @example each([1,2,3], (v, i, arr) = {
+ *              
+ *          })
  */
 const each = (collection:any, iteratee:Function) => {
-    if(!isFn(iteratee)) iteratee = noop
+    if(!isFn(iteratee)) iteratee = noop;
     let result:Array<any> = [];
-    if(isString(collection)) result = (collection as string).split(",");
-    else if(isObj(collection)) result = toKeys(collection);
+    if(isObj(collection)) result = toKeys(collection);
     else if(isArray(collection)) result = collection;
-    else return null;
+    else result = [collection];
     let length:number = result.length;
     let index:number = 0;
     while(index < length) {
