@@ -30,12 +30,15 @@ import typeOf from './typeOf'
 import isPC from './isPC'
 import isNaN from './isNaN'
 import toParam from './toParam'
-import empty from './empty';
-import format from './format';
-import unique from './unique';
-import remove from './remove';
-import noop from './noop';
-import each from './each';
+import empty from './empty'
+import format from './format'
+import unique from './unique'
+import remove from './remove'
+import noop from './noop'
+import each from './each'
+import toKeys from './toKeys'
+import toValues from './toValues'
+const context = require.context("./", true, /\.(js?|ts?)$/)
 export {
 	isArray,
 	isObj,
@@ -74,5 +77,7 @@ export {
 	unique,
 	remove,
 	noop,
-	each
+	each,
+	toKeys,
+	toValues
 }

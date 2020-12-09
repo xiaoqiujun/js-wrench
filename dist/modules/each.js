@@ -26,10 +26,10 @@ const each = (collection, iteratee) => {
     let index = 0;
     while (index < length) {
         if (isObj(collection)) {
-            iteratee(collection[result[index]], result[index], collection);
+            iteratee.call(null, collection[result[index]], result[index], collection);
         }
         else {
-            iteratee(result[index], index, collection);
+            iteratee.call(null, result[index], index, collection);
         }
         index++;
     }

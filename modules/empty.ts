@@ -12,9 +12,10 @@ import isString from './isString';
  * @example empty("") => true empty(null) => true empty(undefined) => true empty({}) => true empty([]) => true empty(0) => false
  */
 const empty = (v:any):boolean => {
-    if(isObj(v) || isArray(v)) return toKeys(v).length === 0
-    if(isNull(v) || isUndefined(v)) return true;
-    if(isString(v)) return v === "";
+    if(isObj(v)) return toKeys(v).length === 0
+    if(isArray(v)) return v.length === 0
+    if(isNull(v) || isUndefined(v)) return true
+    if(isString(v)) return v === ""
     return false
 }
 export default empty;
