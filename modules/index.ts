@@ -38,7 +38,8 @@ import noop from './noop'
 import each from './each'
 import toKeys from './toKeys'
 import toValues from './toValues'
-const context = require.context("./", true, /\.(js?|ts?)$/)
+const context = require.context("./", true, /\.(js?|ts?)$/);
+console.log(context);
 export {
 	isArray,
 	isObj,

@@ -38,4 +38,6 @@ import noop from './noop';
 import each from './each';
 import toKeys from './toKeys';
 import toValues from './toValues';
+const context = require.context("./", true, /\.(js?|ts?)$/);
+console.log(context);
 export { isArray, isObj, check, getBrowserType, has, includes, indexOf, isAndroid, isBool, isDate, isFn, isIOS, isiPad, isMap, isNull, isNumber, isPromise, isSet, isString, isSymbol, isUndefined, isWPhone, ltrim, rtrim, trim, random, toLowerCase, toUpperCase, typeOf, isPC, isNaN, toParam, empty, format, unique, remove, noop, each, toKeys, toValues };
