@@ -532,6 +532,171 @@
     
 
     
+    <h4 class="name" id="each"><span class="type-signature"></span>each<span class="signature">(collection, iteratee)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    迭代器
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>collection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>iteratee</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="each.js.html">each.js</a>, <a href="each.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>each([1,2,3], (v, i, arr) = {         })</code></pre>
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="empty"><span class="type-signature"></span>empty<span class="signature">(v)</span><span class="type-signature"> &rarr; {*}</span></h4>
     
 
@@ -5134,6 +5299,94 @@
     
 
     
+    <h4 class="name" id="noop"><span class="type-signature"></span>noop<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    返回一个空函数
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="noop.js.html">noop.js</a>, <a href="noop.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="random"><span class="type-signature"></span>random<span class="signature">(lower<span class="signature-attributes">opt</span>, upper<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {*}</span></h4>
     
 
@@ -5348,6 +5601,196 @@
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>random(0, 4) => 3</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="remove"><span class="type-signature"></span>remove<span class="signature">(arr, iteratee)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    删除数组元素
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">需要操作的数组</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>iteratee</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">回调</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="remove.js.html">remove.js</a>, <a href="remove.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    {Array<any>} 返回新的数组 注意并不是原数组的引用
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>remove([1,2,3], (v, i, arr) => v === 1) => [2,3];</code></pre>
 
 
 
@@ -8387,13 +8830,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CheckRegExp.html">CheckRegExp</a></li><li><a href="Format.html">Format</a></li></ul><h3>Global</h3><ul><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepCopy">deepCopy</a></li><li><a href="global.html#empty">empty</a></li><li><a href="global.html#getBrowserType">getBrowserType</a></li><li><a href="global.html#getUID">getUID</a></li><li><a href="global.html#getVerifyCode">getVerifyCode</a></li><li><a href="global.html#has">has</a></li><li><a href="global.html#includes">includes</a></li><li><a href="global.html#indexOf">indexOf</a></li><li><a href="global.html#isAndroid">isAndroid</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isBool">isBool</a></li><li><a href="global.html#isDate">isDate</a></li><li><a href="global.html#isFn">isFn</a></li><li><a href="global.html#isIOS">isIOS</a></li><li><a href="global.html#isiPad">isiPad</a></li><li><a href="global.html#isMap">isMap</a></li><li><a href="global.html#isNaN">isNaN</a></li><li><a href="global.html#isNull">isNull</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObj">isObj</a></li><li><a href="global.html#isPC">isPC</a></li><li><a href="global.html#isPrimitive">isPrimitive</a></li><li><a href="global.html#isPromise">isPromise</a></li><li><a href="global.html#isRegExp">isRegExp</a></li><li><a href="global.html#isSet">isSet</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isSymbol">isSymbol</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#isWPhone">isWPhone</a></li><li><a href="global.html#ltrim">ltrim</a></li><li><a href="global.html#random">random</a></li><li><a href="global.html#reverse">reverse</a></li><li><a href="global.html#rtrim">rtrim</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFirstLower">toFirstLower</a></li><li><a href="global.html#toFirstUpper">toFirstUpper</a></li><li><a href="global.html#toKeys">toKeys</a></li><li><a href="global.html#toLowerCase">toLowerCase</a></li><li><a href="global.html#toParam">toParam</a></li><li><a href="global.html#toQuery">toQuery</a></li><li><a href="global.html#toUpperCase">toUpperCase</a></li><li><a href="global.html#toValues">toValues</a></li><li><a href="global.html#trim">trim</a></li><li><a href="global.html#typeOf">typeOf</a></li><li><a href="global.html#unique">unique</a></li><li><a href="global.html#uniqueToArray">uniqueToArray</a></li><li><a href="global.html#uniqueToNumber">uniqueToNumber</a></li><li><a href="global.html#uniqueToSizzArray">uniqueToSizzArray</a></li><li><a href="global.html#uniqueToSttring">uniqueToSttring</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CheckRegExp.html">CheckRegExp</a></li><li><a href="Format.html">Format</a></li></ul><h3>Global</h3><ul><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepCopy">deepCopy</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#empty">empty</a></li><li><a href="global.html#getBrowserType">getBrowserType</a></li><li><a href="global.html#getUID">getUID</a></li><li><a href="global.html#getVerifyCode">getVerifyCode</a></li><li><a href="global.html#has">has</a></li><li><a href="global.html#includes">includes</a></li><li><a href="global.html#indexOf">indexOf</a></li><li><a href="global.html#isAndroid">isAndroid</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isBool">isBool</a></li><li><a href="global.html#isDate">isDate</a></li><li><a href="global.html#isFn">isFn</a></li><li><a href="global.html#isIOS">isIOS</a></li><li><a href="global.html#isiPad">isiPad</a></li><li><a href="global.html#isMap">isMap</a></li><li><a href="global.html#isNaN">isNaN</a></li><li><a href="global.html#isNull">isNull</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObj">isObj</a></li><li><a href="global.html#isPC">isPC</a></li><li><a href="global.html#isPrimitive">isPrimitive</a></li><li><a href="global.html#isPromise">isPromise</a></li><li><a href="global.html#isRegExp">isRegExp</a></li><li><a href="global.html#isSet">isSet</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isSymbol">isSymbol</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#isWPhone">isWPhone</a></li><li><a href="global.html#ltrim">ltrim</a></li><li><a href="global.html#noop">noop</a></li><li><a href="global.html#random">random</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#reverse">reverse</a></li><li><a href="global.html#rtrim">rtrim</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFirstLower">toFirstLower</a></li><li><a href="global.html#toFirstUpper">toFirstUpper</a></li><li><a href="global.html#toKeys">toKeys</a></li><li><a href="global.html#toLowerCase">toLowerCase</a></li><li><a href="global.html#toParam">toParam</a></li><li><a href="global.html#toQuery">toQuery</a></li><li><a href="global.html#toUpperCase">toUpperCase</a></li><li><a href="global.html#toValues">toValues</a></li><li><a href="global.html#trim">trim</a></li><li><a href="global.html#typeOf">typeOf</a></li><li><a href="global.html#unique">unique</a></li><li><a href="global.html#uniqueToArray">uniqueToArray</a></li><li><a href="global.html#uniqueToNumber">uniqueToNumber</a></li><li><a href="global.html#uniqueToSizzArray">uniqueToSizzArray</a></li><li><a href="global.html#uniqueToSttring">uniqueToSttring</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Dec 08 2020 15:35:12 GMT+0800 (GMT+08:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Dec 11 2020 12:24:34 GMT+0800 (GMT+08:00)
 </footer>
 
 <script> prettyPrint(); </script>

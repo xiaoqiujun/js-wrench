@@ -1,84 +1,104 @@
-import isArray from './isArray'
-import isObj from './isObj'
-import check from './check'
-import getBrowserType from './getBrowserType'
-import has from './has'
-import includes from './includes'
-import indexOf from './indexOf'
-import isAndroid from './isAndroid'
-import isBool from './isBool'
-import isDate from './isDate'
-import isFn from './isFn'
-import isIOS from './isIOS'
-import isiPad from './isiPad'
-import isMap from './isMap'
-import isNull from './isNull'
-import isNumber from './isNumber'
-import isPromise from './isPromise'
-import isSet from './isSet'
-import isString from './isString'
-import isSymbol from './isSymbol'
-import isUndefined from './isUndefined'
-import isWPhone from './isWPhone'
-import ltrim from './ltrim'
-import rtrim from './rtrim'
-import trim from './trim'
-import random from './random'
-import toLowerCase from './toLowerCase'
-import toUpperCase from './toUpperCase'
-import typeOf from './typeOf'
-import isPC from './isPC'
-import isNaN from './isNaN'
-import toParam from './toParam'
-import empty from './empty'
-import format from './format'
-import unique from './unique'
-import remove from './remove'
-import noop from './noop'
-import each from './each'
-import toKeys from './toKeys'
-import toValues from './toValues'
-const context = require.context("./", true, /\.(js?|ts?)$/);
-console.log(context);
+import check from "./check";
+import debounce from "./debounce";
+import deepCopy from "./deepCopy";
+import each from "./each";
+import empty from "./empty";
+import format from "./format";
+import getBrowserType from "./getBrowserType";
+import getUID from "./getUID";
+import getVerifyCode from "./getVerifyCode";
+import has from "./has";
+import includes from "./includes";
+import indexOf from "./indexOf";
+import isAndroid from "./isAndroid";
+import isArray from "./isArray";
+import isBool from "./isBool";
+import isDate from "./isDate";
+import isFn from "./isFn";
+import isIOS from "./isIOS";
+import isiPad from "./isiPad";
+import isMap from "./isMap";
+import isNaN from './isNaN';
+import isNull from "./isNull";
+import isNumber from "./isNumber";
+import isObj from "./isObj";
+import isPC from "./isPC";
+import isPrimitive from "./isPrimitive";
+import isPromise from "./isPromise";
+import isRegExp from "./isRegExp";
+import isSet from "./isSet";
+import isString from "./isString";
+import isSymbol from "./isSymbol";
+import isUndefined from "./isUndefined";
+import isWPhone from "./isWPhone";
+import ltrim from "./ltrim";
+import noop from "./noop";
+import random from "./random";
+import remove from "./remove";
+import reverse from "./reverse";
+import rtrim from "./rtrim";
+import throttle from "./throttle";
+import toFirstLower from "./toFirstLower";
+import toFirstUpper from "./toFirstUpper";
+import toKeys from "./toKeys";
+import toLowerCase from "./toLowerCase";
+import toParam from "./toParam";
+import toQuery from "./toQuery";
+import toUpperCase from "./toUpperCase";
+import toValues from "./toValues";
+import trim from "./trim";
+import typeOf from "./typeOf";
+import unique from "./unique";
 export {
-	isArray,
-	isObj,
 	check,
+	debounce,
+	deepCopy,
+	each,
+	empty,
+	format,
 	getBrowserType,
+	getUID,
+	getVerifyCode,
 	has,
 	includes,
 	indexOf,
 	isAndroid,
+	isArray,
 	isBool,
 	isDate,
 	isFn,
 	isIOS,
 	isiPad,
 	isMap,
+	isNaN,
 	isNull,
 	isNumber,
+	isObj,
+	isPC,
+	isPrimitive,
 	isPromise,
+	isRegExp,
 	isSet,
 	isString,
 	isSymbol,
 	isUndefined,
 	isWPhone,
 	ltrim,
-	rtrim,
-	trim,
-	random,
-	toLowerCase,
-	toUpperCase,
-	typeOf,
-	isPC,
-	isNaN,
-	toParam,
-	empty,
-	format,
-	unique,
-	remove,
 	noop,
-	each,
+	random,
+	remove,
+	reverse,
+	rtrim,
+	throttle,
+	toFirstLower,
+	toFirstUpper,
 	toKeys,
-	toValues
+	toLowerCase,
+	toParam,
+	toQuery,
+	toUpperCase,
+	toValues,
+	trim,
+	typeOf,
+	unique
 }
