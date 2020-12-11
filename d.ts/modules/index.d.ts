@@ -49,4 +49,6 @@ import toValues from "./toValues";
 import trim from "./trim";
 import typeOf from "./typeOf";
 import unique from "./unique";
-export { check, debounce, deepCopy, each, empty, format, getBrowserType, getUID, getVerifyCode, has, includes, indexOf, isAndroid, isArray, isBool, isDate, isFn, isIOS, isiPad, isMap, isNaN, isNull, isNumber, isObj, isPC, isPrimitive, isPromise, isRegExp, isSet, isString, isSymbol, isUndefined, isWPhone, ltrim, noop, random, remove, reverse, rtrim, throttle, toFirstLower, toFirstUpper, toKeys, toLowerCase, toParam, toQuery, toUpperCase, toValues, trim, typeOf, unique };
+import bind from './bind';
+import extend from './extend';
+export { check, debounce, deepCopy, each, empty, format, getBrowserType, getUID, getVerifyCode, has, includes, indexOf, isAndroid, isArray, isBool, isDate, isFn, isIOS, isiPad, isMap, isNaN, isNull, isNumber, isObj, isPC, isPrimitive, isPromise, isRegExp, isSet, isString, isSymbol, isUndefined, isWPhone, ltrim, noop, random, remove, reverse, rtrim, throttle, toFirstLower, toFirstUpper, toKeys, toLowerCase, toParam, toQuery, toUpperCase, toValues, trim, typeOf, unique, bind, extend };

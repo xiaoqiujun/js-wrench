@@ -49,6 +49,8 @@ import toValues from "./toValues";
 import trim from "./trim";
 import typeOf from "./typeOf";
 import unique from "./unique";
+import bind from './bind';
+import extend from './extend';
 export {
 	check,
 	debounce,
@@ -100,5 +102,7 @@ export {
 	toValues,
 	trim,
 	typeOf,
-	unique
+	unique,
+	bind,
+	extend
 }
