@@ -51,6 +51,8 @@ import typeOf from "./typeOf";
 import unique from "./unique";
 import bind from './bind';
 import extend from './extend';
+import thread from "./thread";
+import base64ToBlob from "./base64ToBlob";
 export {
 	check,
 	debounce,
@@ -104,5 +106,7 @@ export {
 	typeOf,
 	unique,
 	bind,
-	extend
+	extend,
+	thread,
+	base64ToBlob
 }

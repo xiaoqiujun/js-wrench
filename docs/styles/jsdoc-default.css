@@ -75,7 +75,7 @@ tt, code, kbd, samp {
 }
 
 article dl {
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 }
 
 article img {
@@ -247,15 +247,8 @@ tr > th:last-child { border-right: 1px solid #ddd; }
 .type-signature {
     color: #aaa;
 }
-.name {
-	margin-top: 40px;
-    border-top: solid 1px #3c3b3b75;
-    font-size: 24px;
-    padding-top: 20px;
-    color: #5a8fde;
-}
+
 .name, .signature {
-	margin-top: 20px;
     font-family: Consolas, Monaco, 'Andale Mono', monospace;
 }
 
