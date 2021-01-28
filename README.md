@@ -10,6 +10,6 @@
 `<script src="js-wrench.min.js"></script>`
 
 ##### npm
-`npm install js-wrench --save`
+`npm install @xqj/util --save`
 
 
