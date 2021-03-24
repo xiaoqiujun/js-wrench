@@ -1,6 +1,6 @@
 {
 	"name": "@xqj/util",
-	"version": "1.3.2",
+	"version": "1.4.2",
 	"description": "JS函数库",
 	"main": "js-wrench.min.js",
 	"keywords": [

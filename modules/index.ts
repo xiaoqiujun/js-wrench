@@ -22,7 +22,7 @@ import isNaN from './isNaN';
 import isNull from "./isNull";
 import isNumber from "./isNumber";
 import isObj from "./isObj";
-import isPC from "./isPC";
+import isPC from "./isPc";
 import isPrimitive from "./isPrimitive";
 import isPromise from "./isPromise";
 import isRegExp from "./isRegExp";
@@ -53,6 +53,7 @@ import bind from './bind';
 import extend from './extend';
 import thread from "./thread";
 import base64ToBlob from "./base64ToBlob";
+import to from './to';
 export {
 	check,
 	debounce,
@@ -108,5 +109,6 @@ export {
 	bind,
 	extend,
 	thread,
-	base64ToBlob
+	base64ToBlob,
+	to
 }
