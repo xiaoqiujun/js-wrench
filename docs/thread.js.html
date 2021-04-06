@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: ltrim.js</title>
+    <title>JSDoc: Source: thread.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: ltrim.js</h1>
+    <h1 class="page-title">Source: thread.js</h1>
 
     
 
@@ -27,17 +27,25 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 对字符串左边去空格
  *
- * @param {string} str 传入一个字符串
- * @return {*}  {string} 返回一个左边没有空格的新的字符串
- * @example ltrim(" abc ") => "abc "
+ * @param gen 函数生成器
  */
-const ltrim = (str) => {
-    let reg = /^\s*/;
-    return str.replace(reg, '');
+const thread = (gen) => {
+    let it = gen();
+    function next(data) {
+        let res = it.next(data);
+        if (res.done)
+            return res.value;
+        res.value.then(() => {
+            next(data);
+        }).catch((e) => {
+            res = it.next(data);
+            next(data);
+        });
+    }
+    next();
 };
-export default ltrim;
+export default thread;
 </code></pre>
         </article>
     </section>

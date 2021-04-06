@@ -8,4 +8,4 @@ export declare const splice: {
     (start: number, deleteCount: number, ...items: any[]): any[];
 };
 export declare const toString: () => string;
-export declare const hasOwnProperty: (v: PropertyKey) => boolean;
+export declare const hasOwnProperty: (v: string | number | symbol) => boolean;

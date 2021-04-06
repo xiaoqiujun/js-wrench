@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: ltrim.js</title>
+    <title>JSDoc: Source: to.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: ltrim.js</h1>
+    <h1 class="page-title">Source: to.js</h1>
 
     
 
@@ -27,17 +27,21 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 对字符串左边去空格
- *
- * @param {string} str 传入一个字符串
- * @return {*}  {string} 返回一个左边没有空格的新的字符串
- * @example ltrim(" abc ") => "abc "
+ * 异步异常处理
+ * @param promise 接收一个primose
+ * @returns promise
  */
-const ltrim = (str) => {
-    let reg = /^\s*/;
-    return str.replace(reg, '');
+const to = (promise) => {
+    if (typeof promise.then !== 'function') {
+        let _promise = new Promise((resolve) => {
+            resolve(promise);
+        });
+        return to(_promise);
+    }
+    return promise.then((data) => [null, data])
+        .catch((err) => [err, undefined]);
 };
-export default ltrim;
+export default to;
 </code></pre>
         </article>
     </section>

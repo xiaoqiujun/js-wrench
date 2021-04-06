@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: ltrim.js</title>
+    <title>JSDoc: Source: base64ToBlob.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: ltrim.js</h1>
+    <h1 class="page-title">Source: base64ToBlob.js</h1>
 
     
 
@@ -27,17 +27,34 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 对字符串左边去空格
  *
- * @param {string} str 传入一个字符串
- * @return {*}  {string} 返回一个左边没有空格的新的字符串
- * @example ltrim(" abc ") => "abc "
+ * @param base64 base64数据
+ * @returns
  */
-const ltrim = (str) => {
-    let reg = /^\s*/;
-    return str.replace(reg, '');
+const base64ToBlob = (base64) => {
+    if (!base64)
+        return;
+    let arr = base64.split(',');
+    let mime = 'image/png';
+    let match = arr[0].match(/:(.*?);/);
+    if (match &amp;&amp; match[1]) {
+        mime = match[1];
+    }
+    let bytes = window.atob(arr[1]);
+    let arrayBuffer = new ArrayBuffer(bytes.length);
+    let ia = new Uint8Array(arrayBuffer);
+    for (let i = 0; i &lt; bytes.length; i++) {
+        ia[i] = bytes.charCodeAt(i);
+    }
+    let blob = new Blob([arrayBuffer], {
+        type: mime
+    });
+    let formdata = new FormData(); // new一个formdata对象
+    let _filename = new Date().getTime() + '.png'; // 修改文件名
+    formdata.append('file', blob, _filename); // key值, 二进制类型文件,文件名
+    return formdata;
 };
-export default ltrim;
+export default base64ToBlob;
 </code></pre>
         </article>
     </section>

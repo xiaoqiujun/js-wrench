@@ -22,7 +22,7 @@ import isNaN from './isNaN';
 import isNull from "./isNull";
 import isNumber from "./isNumber";
 import isObj from "./isObj";
-import isPC from "./isPc";
+import isPC from "./isPC";
 import isPrimitive from "./isPrimitive";
 import isPromise from "./isPromise";
 import isRegExp from "./isRegExp";

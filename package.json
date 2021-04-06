@@ -1,6 +1,6 @@
 {
 	"name": "@xqj/util",
-	"version": "1.4.2",
+	"version": "1.4.3",
 	"description": "JS函数库",
 	"main": "js-wrench.min.js",
 	"keywords": [
@@ -9,6 +9,9 @@
 		"client",
 		"utils",
 		"browser"
+	],
+	"files": [
+		"js-wrench.min.js"
 	],
 	"scripts": {
 		"dev": "set NODE_ENV=development && tsc && webpack",
