@@ -11,7 +11,8 @@
 		"browser"
 	],
 	"files": [
-		"js-wrench.min.js"
+		"js-wrench.min.js",
+		"README.md"
 	],
 	"scripts": {
 		"dev": "set NODE_ENV=development && tsc && webpack",
